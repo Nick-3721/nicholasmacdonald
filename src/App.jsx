@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Layout from './assets/Components/layout'
+import Layout from './assets/Components/Layout'
 
 
 function App() {

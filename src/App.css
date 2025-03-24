@@ -2,8 +2,62 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #000;
 }
-/* my code */
+body {
+  margin: 0;
+}
+.wrapper {
+  max-width: 1650px;
+  padding: 0 clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
+  margin: 0 auto;
+  display: block;
+}
 
+
+
+/* Nav */
+nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+.logo-container {
+  justify-self: start; 
+}
+.theme-toggle-container {
+  justify-self: center; 
+  position: absolute;
+}
+.theme-toggle {
+  border-radius: 50%;
+  padding: 10px;
+}
+.nav-links {
+  justify-self: end; 
+}
+
+#nav-logo {
+  fill: white;
+  height: 50px;
+  cursor: pointer;
+}
+
+.theme-toggle-container {
+  margin: 0 auto; 
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: auto;
+}
+
+
+/* Flip link */
+
+/* Dont need the below? */
 .section-custom {
   display: grid;
   place-content: center;
@@ -18,16 +72,17 @@
 }
 
 
-
 .flip-link {
   position: relative;
+  cursor: pointer;
   display: block;
   overflow: hidden;
   white-space: nowrap;
   font-size: clamp(0.7rem, 0.4rem + 1.8vw, 1.2rem); /* 18px → 24px ; /* text-4xl = 2.25rem */
-  font-weight: 900; /* font-black = 900 */
-  text-transform: uppercase;
+  /* font-weight: 900;  */
+  /* text-transform: uppercase; */
   color: #fff;
+  height: fit-content;
 }
 
 .flip-link-line2 {
@@ -37,5 +92,3 @@
   bottom: 0;
   left: 0;
 }
-
-

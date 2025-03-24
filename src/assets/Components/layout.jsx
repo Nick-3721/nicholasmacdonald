@@ -4,12 +4,12 @@ import Nav from './nav'
 
 export default function Layout() {
   return (
-    <div>
+    <>
       <Nav/>
       <main>
         <Outlet/>
       </main>
       {/* <Footer/> */}
-    </div>
+    </>
   )
 }

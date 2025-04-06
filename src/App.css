@@ -1,31 +1,107 @@
+:root {
+  --spacing-clamp: clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
+}
 
 body {
   margin: 0;
 }
 .wrapper {
   max-width: 1650px;
-  padding: 0 clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
+  padding: 0 var(--spacing-clamp);
   margin: 0 auto;
   display: block;
 }
 
 
-
-/* Nav */
 header {
   position: fixed;
-  top: clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
   left: 0;
   width: 100%;
   z-index: 10;
 }
 
-nav {
+.top {
+  position: absolute;
+  top: var(--spacing-clamp);
+  left: var(--spacing-clamp);
+  right: var(--spacing-clamp);
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  width: 100%;
 }
+
+.theme-toggle-container {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-toggle {
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.bottom {
+  position: fixed;
+  bottom: var(--spacing-clamp);
+  left: var(--spacing-clamp);
+  right: var(--spacing-clamp);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 2 * var(--spacing-clamp));
+}
+
+.right {
+  margin: 0 0 0 auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: auto;
+}
+
+/* Nav */
+/* header {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.top {
+  position: inherit;
+  top: var(--spacing-clamp);
+  left: var(--spacing-clamp);
+  right: var(--spacing-clamp);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.bottom {
+  position: inherit;
+  left: var(--spacing-clamp);
+  bottom: var(--spacing-clamp);
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+
+.right {
+  position: fixed;
+  right: var(--spacing-clamp);
+  margin: 0;
+  bottom: inherit;
+  top: inherit;
+}
+
 
 .theme-toggle-container {
   justify-self: center; 
@@ -48,22 +124,7 @@ nav {
   align-items: center;
   gap: 1.2rem;
   margin-left: auto;
-}
-
-.bottom {
-  bottom: clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
-  left: clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
-  position: fixed;
-}
-
-.right {
-  position: fixed;
-  right: clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
-  bottom: clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
-  margin: 0;
-}
-
-
+} */
 
 
 /* Flip link */

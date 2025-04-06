@@ -13,8 +13,9 @@ const GlobalStyles =  createGlobalStyle`
   } */
 
   body {
-    /* font-family: "Sora", sans-serif; */
-    font-family: "degular", sans-serif;
+    font-family: "Sora", sans-serif;
+    /* font-family: "degular", sans-serif; */
+    /* font-family: "Krona one", sans-serif; */
     font-weight: 200;
     font-style: normal;
     font-weight: 400;

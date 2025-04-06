@@ -20,8 +20,8 @@ const themes = {
     secondaryColor : "rgb(0, 0, 0)",
   },
   theme5: {
-    primaryColor : "rgb(4, 16, 73)",
-    secondaryColor : "rgb(255, 41, 5)",
+    primaryColor : "rgb(29, 0, 71)",
+    secondaryColor : "rgb(255, 0, 0)",
   },
   theme6: {
     primaryColor : "rgb(30, 63, 30)",
@@ -39,12 +39,28 @@ const themes = {
     primaryColor : "rgb(35, 9, 89)",
     secondaryColor : "rgb(255, 123, 123)",
   },
+  theme10: {
+    primaryColor : "rgb(0, 0, 255)",
+    secondaryColor : "rgb(255, 255, 255)",
+  },
+  theme11: {
+    primaryColor : "rgb(100, 120, 100)",
+    secondaryColor : "rgb(251, 238, 241)",
+  },
+  theme12: {
+    primaryColor : "rgb(55, 63, 45)",
+    secondaryColor : "rgb(255, 88, 62)",
+  },
+  theme13: {
+    primaryColor : "rgb(60, 66, 54)",
+    secondaryColor : "rgb(183, 255, 0)",
+  },
 }
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState("theme1")
+  const [themeName, setThemeName] = useState("theme12")
   const theme = themes[themeName]
   
   const changeTheme = () => {

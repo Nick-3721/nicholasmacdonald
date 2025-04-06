@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components';
-import { useTheme } from '../ThemeProvider';
+import { useTheme } from '../styles/ThemeProvider';
 
 
 const DURATION = 0.35;
@@ -9,6 +9,8 @@ const STAGGER = 0.05;
 
 
 const FlipLink = styled.a`
+  font-family: "degular", sans-serif;
+  font-weight: 400;
   position: relative;
   cursor: pointer;
   display: block;

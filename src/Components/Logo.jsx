@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { useTheme } from '../ThemeProvider';
+import { useTheme } from '../styles/ThemeProvider';
 
 const LogoContainer = styled.div`
     justify-self: start; 

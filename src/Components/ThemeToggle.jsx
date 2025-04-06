@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { useTheme } from '../ThemeProvider';
+import { useTheme } from '../styles/ThemeProvider';
 
 let height = 35
 let width = 114
@@ -9,7 +9,8 @@ let width = 114
 
 const ThemeButton = styled.button`
     cursor: pointer;
-    background-color: unset;
+    /* background-color: unset; */
+    background-color: ${({ theme }) => theme.primaryColor};
     color: ${({ theme }) => theme.secondaryColor};
     height: ${height}px;
     width: ${width}px;
@@ -24,6 +25,7 @@ const ThemeButton = styled.button`
 
     p {
       font-family: "degular", sans-serif;
+      font-size: 14px;
       font-weight: 400;
       position: absolute;
       right: 16px;

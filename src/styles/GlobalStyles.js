@@ -20,15 +20,25 @@ const GlobalStyles =  createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     font-style: normal;
+    margin: 0;
   }
+
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: "Krona one", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
-    line-height: 1em;
+    line-height: 1.1em;
   }
 
+  h1, h2, h3, h4, h5, h6, p {
+    margin: inherit;
+  }
+
+  h1 {
+    color:${({ theme }) => theme.secondaryColor};
+    font-size: 80px;
+  }
 
   ::selection {
   background-color: ${({ theme }) => theme.secondaryColor.replace("rgb", "rgba").replace(")", ", 0.75)")};

@@ -26,7 +26,7 @@ const FlipText = styled(motion.h1)`
   position: absolute;
   left: 0;
   right: 0;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
   opacity: 0;
   margin: 0;
@@ -46,12 +46,13 @@ export default function RevealLink({ words, newTab }) {
     }
   }, [words]);
 
-  const handleHover = () => {
+  const handleChange = () => {
     setIndex((prevIndex) => (prevIndex + 1) % words.length);
   };
 
   return (
-    <motion.div initial="initial" whileHover="hovered" onHoverStart={handleHover}>
+    <motion.div  style={{height: dimensions.height, display: "inline-flex"}} initial="initial" whileHover="hovered" onHoverStart={handleChange} onClick={handleChange}>
+      <h1>&&nbsp;</h1>
       <FlipLink target={newTab ? "_blank" : ""}>
         <FlipContainer height={dimensions.height} width={dimensions.width}>
           {words.map((word, i) => (

@@ -1,0 +1,87 @@
+:root {
+  --spacing-clamp: clamp(0.875rem, 0.85rem + 0.5vw, 1rem);
+}
+
+
+.wrapper {
+  max-width: 1650px;
+  padding: 0 var(--spacing-clamp);
+  /* margin: 0 auto; */
+  display: block;
+}
+
+
+header {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.top {
+  position: absolute;
+  top: var(--spacing-clamp);
+  left: var(--spacing-clamp);
+  right: var(--spacing-clamp);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.theme-toggle-container {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-toggle {
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.bottom {
+  position: fixed;
+  bottom: var(--spacing-clamp);
+  left: var(--spacing-clamp);
+  right: var(--spacing-clamp);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 2 * var(--spacing-clamp));
+}
+
+.right {
+  margin: 0 0 0 auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: auto;
+}
+
+.homepage-hero {
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;     
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.grid > h1 {
+  align-self: start; /* top of its grid row */
+}
+
+.grid > div {
+  align-self: end; /* bottom of its grid row */
+}
+

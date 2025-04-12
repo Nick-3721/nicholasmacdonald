@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components';
-import { useTheme } from '../styles/ThemeProvider';
+import { useTheme } from '@/styles/ThemeProvider';
 
 
 const DURATION = 0.35;

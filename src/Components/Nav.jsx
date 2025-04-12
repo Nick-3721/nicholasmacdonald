@@ -1,14 +1,13 @@
 import React from 'react'
-import RevealLink from './RevealLink'
-import ThemeToggle from './ThemeToggle'
-import Logo from './Logo'
-import { useTheme } from '../styles/ThemeProvider'
+import RevealLink from '@/Components/RevealLink'
+import ThemeToggle from '@/Components/ThemeToggle'
+import Logo from '@/Components/Logo'
+import { useTheme } from '@/styles/ThemeProvider'
 
 
 
 export default function Nav() {
 const { theme } = useTheme(); 
-console.log("Current Theme:", theme.primaryColor);
 
   return (
     // <header>

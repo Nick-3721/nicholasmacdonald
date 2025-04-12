@@ -1,13 +1,15 @@
-import './App.css'
-import Layout from './Components/Layout'
-import Home from './pages/Home'
+import { Routes, Route } from 'react-router-dom'
+import '@/styles/App.css'
+import Home from '@/pages/Home'
+import Layout from '@/Components/Layout'
 
 function App() {
   return (
-      <> 
-        <Layout/>
-        < Home />
-      </>
+      <Routes> 
+        <Route path='/' element={<Layout />} >
+          <Route index element={<Home />}/>
+        </Route>
+      </Routes>
 
   )
 }

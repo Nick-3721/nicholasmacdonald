@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import GlobalStyles from './GlobalStyles.js';
+import GlobalStyles from '@/styles/GlobalStyles.js';
 
 const themes = {
   theme1: {

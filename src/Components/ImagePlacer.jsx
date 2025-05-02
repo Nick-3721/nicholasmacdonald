@@ -38,7 +38,7 @@ export default function ImagePlacer({ children }) {
     //remove images after X time
     setTimeout(() => {
       setPlacedImages((prev) => prev.filter((img) => img.id !== newImage.id))
-    }, 3000)
+    }, 6000)
   }
 
   const placeImageAt = (x, y) => {
@@ -83,8 +83,8 @@ export default function ImagePlacer({ children }) {
 
   return (
     <div
-      // onClick={handleClick}
-      onMouseMove={handleMouseMove}
+      onClick={handleClick}
+      // onMouseMove={handleMouseMove}
       style={{
         position: 'relative',
         width: "100",
@@ -146,7 +146,7 @@ export default function ImagePlacer({ children }) {
               // rotate: 15,
               x: "-50%",
               y: "-50%",
-              filter: "blur(6px)",
+              filter: "blur(86px)",
             }}
             transition={{
               scale: { duration: 0.2, ease: "easeOut" },

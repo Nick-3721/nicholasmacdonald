@@ -9,8 +9,8 @@ let width = 114
 
 const ThemeButton = styled.button`
     cursor: pointer;
-    /* background-color: unset; */
-    background-color: ${({ theme }) => theme.primaryColor};
+    background-color: unset;
+    /* background-color: ${({ theme }) => theme.primaryColor}; */
     color: ${({ theme }) => theme.secondaryColor};
     height: ${height}px;
     width: ${width}px;

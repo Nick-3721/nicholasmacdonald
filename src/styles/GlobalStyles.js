@@ -38,6 +38,7 @@ const GlobalStyles =  createGlobalStyle`
   h1 {
     color:${({ theme }) => theme.secondaryColor};
     font-size: 80px;
+    letter-spacing: 0.03em;
   }
 
   ::selection {

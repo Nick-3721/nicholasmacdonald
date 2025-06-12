@@ -9,12 +9,12 @@ const LogoContainer = styled.div`
 const StyledLogo = styled.svg`
     fill: ${({ theme }) => theme.secondaryColor};
     height: 50px;
-    cursor: pointer;
+    /* cursor: pointer; */
 `;
 
 export default function Logo() {
   return (
-    <LogoContainer>
+    <LogoContainer data-cursor="hover">
       <a href="/">
         <StyledLogo xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="6 0 20 32">
           <polygon points="6.7 9.8 6.6 9.8 6.6 13.1 6.6 26.9 6.6 26.9 10.4 26.9 10.4 32 10.5 32 17.8 32 19.6 32 6.7 9.8"/>

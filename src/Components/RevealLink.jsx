@@ -33,10 +33,11 @@ const FlipLink2 = styled.div`
 export default function RevealLink ({ children, href, newTab}) {
   return (
     <motion.div 
-      initial="initial"
-      whileHover="hovered"
+    initial="initial"
+    whileHover="hovered"
     >
       <FlipLink
+      data-cursor="hover"
         href={href}
         target={newTab ? "_blank" : ""}
       >

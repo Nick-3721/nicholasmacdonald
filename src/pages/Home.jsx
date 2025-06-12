@@ -1,30 +1,36 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useTheme } from '@/styles/ThemeProvider';
 import WordFlip from '@/Components/WordFlip'
-import ImagePlacer from '../Components/ImagePlacer';
+import ImagePlacer from '@/Components/ImagePlacer';
+import ScrambleText from '@/Components/ScrambleText';
+import CyclingScrambledText from '@/Components/CyclingScrambledText';
 
 export default function Home() {
   const { theme } = useTheme();
-  const textRef = useRef([]);
+  // const textRef = useRef([]);
 
-  const [titleHeight, setTitleHeight] = useState(0)
+  // const [titleHeight, setTitleHeight] = useState(0)
 
-  useEffect(() => {
-    if(textRef.current) {
-      setTitleHeight(textRef.current.scrollHeight)
-    }
-  }), [];
+  // useEffect(() => {
+  //   if(textRef.current) {
+  //     setTitleHeight(textRef.current.scrollHeight)
+  //   }
+  // }), [];
 
   return (
     <>
     <ImagePlacer>
       <div className="wrapper">
         <div className="headline-container">
-          <h1>Nicholas MacDonald</h1>
-          <div className="grid" style={{height: titleHeight*2}}>
-            <h1 ref={textRef}>Developer</h1>
-            <WordFlip words={["Designer", "Videographer", "Animator", "3D artist", "Creative", "Visual Artist", "Illustrator", "Motion Designer", "Photographer", "UI/UX Designer",]} />
-          </div>
+          <ScrambleText as="h1" text="Nicholas MacDonald"/>
+          <ScrambleText as="h1" text="Developer &" />
+          <CyclingScrambledText
+            as="h1"
+            words={["Designer", "Videographer", "Animator", "3D artist", "Creative", "Visual Artist", "Illustrator", "Motion Designer", "Photographer", "UI/UX Designer",]}
+            interval={4000} // how long each word is displayed
+            className="text-3xl font-bold"
+          />
+        {/* <WordFlip words={["Designer", "Videographer", "Animator", "3D artist", "Creative", "Visual Artist", "Illustrator", "Motion Designer", "Photographer", "UI/UX Designer",]} /> */}
         </div>
       </div>
     </ImagePlacer>

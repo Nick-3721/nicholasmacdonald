@@ -22,6 +22,7 @@ const ThemeButton = styled.button`
     border: none;
     overflow: hidden;
     position: relative;
+    z-index: 1000;
 
     p {
       font-family: "degular", sans-serif;
@@ -60,7 +61,7 @@ const ThemeButton = styled.button`
       /* transition: color 0.2s ease-out 0.1s; */
       color: ${({ theme }) => theme.primaryColor};
       margin-top: -1px;
-      z-index: 1;
+      z-index: 1001;
     }
 
     &:hover .button-arrow-container {
@@ -78,7 +79,7 @@ const Border = styled.div`
     justify-content: center;
     text-decoration: none;
     align-items: center;
-    z-index: 2;
+    z-index: 1002;
     border-radius: inherit;
 `;
 
@@ -110,7 +111,9 @@ export default function ThemeToggle() {
 
 
   return (
-      <ThemeButton onClick={changeTheme}>
+      <ThemeButton onClick={changeTheme} 
+      // data-cursor="hover" 
+      >
         <Border />
         <ButtonBall />
         <p>Switch it up</p>

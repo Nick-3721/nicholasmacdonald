@@ -19,8 +19,8 @@ const themes = {
   },
   theme4: {
     primaryColor : "rgb(0, 255, 0)",
-    secondaryColor : "rgb(0, 0, 0)",
-    tertiaryColor: "rgb(0, 255, 127)", // A lighter green to keep the vibrant feel but with contrast.
+    secondaryColor : "rgb(19, 19, 19)",
+    tertiaryColor: "rgb(167, 255, 124)", // A lighter green to keep the vibrant feel but with contrast.
   },
   theme5: {
     primaryColor : "rgb(29, 0, 71)",
@@ -73,11 +73,14 @@ const themes = {
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState("theme12")
+  const themeKeys = Object.keys(themes)
+  const randomKey = themeKeys[Math.floor(Math.random() * themeKeys.length)]
+  
+  const [themeName, setThemeName] = useState(randomKey)
   const theme = themes[themeName]
   
+
   const changeTheme = () => {
-    const themeKeys = Object.keys(themes)
     const nextIndex = (themeKeys.indexOf(themeName) + 1) % themeKeys.length
     setThemeName(themeKeys[nextIndex])
   }

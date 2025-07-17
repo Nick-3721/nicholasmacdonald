@@ -37,8 +37,9 @@ const ScrambledLetter = memo(({ targetChar, delay }) => {
 
   return (
     <motion.span
-      initial={{ opacity: 0 }}
-      animate={{ opacity: hasRevealed ? 1 : 0.6 }}
+      initial={{ opacity: 1 }}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: hasRevealed ? 1 : 0.6 }}
       transition={{ duration: 0.3 }}
       style={{ display: 'inline-block' }}
     >

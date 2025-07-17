@@ -28,22 +28,26 @@ const { theme } = useTheme();
     //   </div>
     // </header>
       <header>
-        <div className="top">
+        <div className="nav-top">
           <Logo />
           <div className="nav-links">
             <RevealLink href="https://github.com/Nick-3721" newTab>Github</RevealLink>
-            <RevealLink href="/work">Work</RevealLink>
             <RevealLink href="https://www.linkedin.com/in/nicholasmacdonalddesign/" newTab>LinkedIn</RevealLink>
           </div>
           <div className="theme-toggle-container">
             <ThemeToggle />
           </div>
         </div>
-        <div className="bottom">
-          <RevealLink href="/Nicholas-MacDonald_CV.jpg" newTab>CV</RevealLink>
+        <div className="nav-middle">
+          <RevealLink to="/work">Work</RevealLink>
+        </div>
+        <div className="nav-bottom">
+          <RevealLink to="/about" newTab>About</RevealLink>
           <p
-          style={{color: theme.secondaryColor}}
-          className="right"> © {new Date().getFullYear()}</p>
+            data-cursor="hover"
+            style={{color: theme.secondaryColor, fontFamily: 'degular, sans-serif'}}
+            className="right"
+          > © {new Date().getFullYear()}</p>
         </div>
       </header>
   )

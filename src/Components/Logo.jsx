@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@/styles/ThemeProvider';
 
 const LogoContainer = styled.div`
     justify-self: start; 

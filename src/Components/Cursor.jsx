@@ -76,7 +76,7 @@ export default function Cursor() {
       document.removeEventListener('mouseenter', handleMouseEnter, true);
       document.removeEventListener('mouseleave', handleMouseLeave, true);
     };
-  }, []); // Empty dependency array
+  }, []);
 
   const variants = {
     default: {

@@ -4,33 +4,31 @@ import WordFlip from '@/Components/WordFlip'
 import ImagePlacer from '@/Components/ImagePlacer';
 import ScrambleText from '@/Components/ScrambleText';
 import CyclingScrambledText from '@/Components/CyclingScrambledText';
+import ScramblingText from '@/Components/ScramblingText';
+import WelcomeMessage from '@/Components/WelcomeMessage';
 
 export default function Home() {
   const { theme } = useTheme();
-  // const textRef = useRef([]);
 
-  // const [titleHeight, setTitleHeight] = useState(0)
-
-  // useEffect(() => {
-  //   if(textRef.current) {
-  //     setTitleHeight(textRef.current.scrollHeight)
-  //   }
-  // }), [];
 
   return (
     <>
+    <WelcomeMessage />
     <ImagePlacer>
+
       <div className="wrapper">
         <div className="headline-container">
-          <ScrambleText as="h1" text="Nicholas MacDonald"/>
-          <ScrambleText as="h1" text="Developer &" />
-          <CyclingScrambledText
+
+          <ScramblingText as="h1" text="Nicholas MacDonald" trigger="inView" />
+          <ScramblingText as="h1" text="Developer & " trigger="inView" />
+          <ScramblingText 
             as="h1"
-            words={["Designer", "Videographer", "Animator", "3D artist", "Creative", "Visual Artist", "Illustrator", "Motion Designer", "Photographer", "UI/UX Designer",]}
-            interval={4000} // how long each word is displayed
-            className="text-3xl font-bold"
+            words={["Designer", "Videographer", "Animator", "3D Artist", "Creative", "Visual Artist", "Illustrator", "Motion Designer", "Photographer", "UI/UX Designer",]}
+            interval={3000} 
+            trigger="timer"
+            cycle={true}
+            startDelay={500}
           />
-        {/* <WordFlip words={["Designer", "Videographer", "Animator", "3D artist", "Creative", "Visual Artist", "Illustrator", "Motion Designer", "Photographer", "UI/UX Designer",]} /> */}
         </div>
       </div>
     </ImagePlacer>

@@ -13,6 +13,12 @@ const ScrambledLetter = memo(({ targetChar, phase, delay, as: Tag = 'span' }) =>
     let timeout;
     let interval;
 
+    if(targetChar === ' ') {
+      setDisplayChar('\u00A0');
+      setIsVisible(true);
+      return;
+    }
+
     // Animate in
     if (phase === 'in') {
       timeout = setTimeout(() => {

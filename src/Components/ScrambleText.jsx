@@ -9,7 +9,13 @@ const ScrambledLetter = memo(({ targetChar, delay }) => {
 
   useEffect(() => {
     let timeout;
-    let interval; // declare interval in the outer scope
+    let interval; 
+
+    if(targetChar === ' ') {
+      setDisplayChar('\u00A0');
+      setHasRevealed(true);
+      return;
+    }
 
     if (!hasRevealed) {
       timeout = setTimeout(() => {
@@ -26,12 +32,12 @@ const ScrambledLetter = memo(({ targetChar, delay }) => {
         }, 100);
       }, delay);
     } else {
-      setDisplayChar(targetChar); // skip animation if already revealed
+      setDisplayChar(targetChar); 
     }
 
     return () => {
       clearTimeout(timeout);
-      clearInterval(interval); // now interval is defined
+      clearInterval(interval);
     };
   }, [targetChar, delay, hasRevealed]);
 
@@ -41,7 +47,7 @@ const ScrambledLetter = memo(({ targetChar, delay }) => {
       // initial={{ opacity: 0 }}
       // animate={{ opacity: hasRevealed ? 1 : 0.6 }}
       transition={{ duration: 0.3 }}
-      style={{ display: 'inline-block' }}
+      style={{ display: 'inline-block', whiteSpace: 'pre' }}
     >
       {displayChar}
     </motion.span>

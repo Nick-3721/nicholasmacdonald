@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../styles/ThemeProvider';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import WelcomeMessage from '@/Components/WelcomeMessage';
+
 
 const cursorSize = {
   h: 16,
@@ -47,6 +49,8 @@ export default function Cursor() {
       const cursorTarget = target.closest('[data-cursor]');
       if (cursorTarget) {
         const type = cursorTarget.getAttribute('data-cursor');
+        // setShowMessage(false)
+        // ==========  MAYBE REMOVE THIS LOOKS A BIT MUCH
         if (type === 'hover') {
           setCursorVariant('hovered');
         } else if (type === 'title') {
@@ -64,6 +68,7 @@ export default function Cursor() {
     
       if (cursorTarget && !(relatedTarget instanceof Element && relatedTarget.closest('[data-cursor]'))) {
         setCursorVariant('default');
+        setShowMessage(true)
       }
     };
 
@@ -94,11 +99,19 @@ export default function Cursor() {
     },
   };
 
+  const [showMessage, setShowMessage] = useState(true);
+
   return (
     <StyledCursor
       style={{ x: cursorX, y: cursorY }}
       variants={variants}
       animate={cursorVariant}
-    />
+    >
+      {showMessage && 
+        <WelcomeMessage
+          height={cursorSize.h}
+        />
+      }
+    </StyledCursor>
   );
 }

@@ -42,7 +42,10 @@ const { theme } = useTheme();
           <RevealLink to="/work">Work</RevealLink>
         </div>
         <div className="nav-bottom">
-          <RevealLink to="/about" newTab>About</RevealLink>
+          <div className="nav-links">
+            <RevealLink to="/about" newTab>About</RevealLink>
+            <RevealLink href="mailto:hello@nicholasmacdonald.com" newTab>Contact</RevealLink>
+          </div>
           <p
             data-cursor="hover"
             style={{color: theme.secondaryColor, fontFamily: 'degular, sans-serif'}}

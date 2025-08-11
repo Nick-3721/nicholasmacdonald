@@ -68,7 +68,12 @@ header {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+}
+.nav-top .nav-links{
   margin-left: auto;
+}
+.nav-bottom .nav-links{
+  margin-right: auto;
 }
 
 .homepage-hero {

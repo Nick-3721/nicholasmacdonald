@@ -49,7 +49,7 @@ export default function Cursor() {
       const cursorTarget = target.closest('[data-cursor]');
       if (cursorTarget) {
         const type = cursorTarget.getAttribute('data-cursor');
-        // setShowMessage(false)
+        setShowMessage(false)
         // ==========  MAYBE REMOVE THIS LOOKS A BIT MUCH
         if (type === 'hover') {
           setCursorVariant('hovered');

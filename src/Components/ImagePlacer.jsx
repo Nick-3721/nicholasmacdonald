@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import { useTheme } from '@/styles/ThemeProvider';
 import { motion, AnimatePresence, distance } from 'framer-motion';
 
 export default function ImagePlacer({ children }) {
-  const { theme } = useTheme();
   
   const [placedImages, setPlacedImages] = useState([]);
   const [imageIndex, setImageIndex] = useState(0)
@@ -91,7 +89,7 @@ export default function ImagePlacer({ children }) {
         display: "flex",
         alignItems: "center",
         overflow: 'hidden',
-        backgroundColor: theme.primaryColor}}
+        backgroundColor: `rgb(var(--primary-color))`}}
     >
       <AnimatePresence>
       {placedImages.map((img) => (

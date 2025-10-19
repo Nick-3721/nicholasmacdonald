@@ -32,6 +32,7 @@ const GlobalStyles =  createGlobalStyle`
     font-optical-sizing: auto;
     font-weight: 200;
     line-height: 1.1em;
+    letter-spacing: normal;
   }
 
   h1, h2, h3, h4, h5, h6, p {

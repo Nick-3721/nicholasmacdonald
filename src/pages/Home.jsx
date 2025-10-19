@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useTheme } from '@/styles/ThemeProvider';
 import WordFlip from '@/Components/WordFlip'
 import ImagePlacer from '@/Components/ImagePlacer';
 import ScramblingText from '@/Components/ScramblingText';
+import styles from './Home.module.css';
 
 export default function Home() {
-  const { theme } = useTheme();
 
 
   return (

@@ -1,37 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styles from './WordFlip.module.css';
 
 const DURATION = 0.35;
-
-const FlipLink = styled.a`
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: clamp(0.7rem, 0.4rem + 1.8vw, 1.2rem);
-  color: ${({ theme }) => theme.secondaryColor};
-`;
-
-const FlipContainer = styled.div`
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  height: ${({ height }) => height}px;
-  width: ${({ width }) => width}px;
-`;
-
-const FlipText = styled(motion.h1)`
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: left;
-  white-space: nowrap;
-  opacity: 0;
-  margin: 0;
-  font-size: 80px;
-`;
 
 export default function RevealLink({ words, newTab }) {
   const [index, setIndex] = useState(0);
@@ -52,22 +23,26 @@ export default function RevealLink({ words, newTab }) {
 
   return (
     <motion.div  style={{height: dimensions.height, display: "inline-flex"}} initial="initial" whileHover="hovered" onHoverStart={handleChange} onClick={handleChange}>
-      <h1>&&nbsp;</h1>
-      <FlipLink target={newTab ? "_blank" : ""}>
-        <FlipContainer height={dimensions.height} width={dimensions.width}>
+      <h1>&nbsp;</h1>
+      <a className={styles.flipLink} target={newTab ? "_blank" : ""}>
+        <div 
+          className={styles.flipContainer}
+          style={{ height: dimensions.height, width: dimensions.width }}
+        >
           {words.map((word, i) => (
-            <FlipText
+            <motion.h1
               key={i}
               ref={el => textRefs.current[i] = el}
+              className={styles.flipText}
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: i === index ? 0 : "-100%", opacity: i === index ? 1 : 0 }}
               transition={{ duration: DURATION, ease: "easeInOut" }}
             >
               {word}
-            </FlipText>
+            </motion.h1>
           ))}
-        </FlipContainer>
-      </FlipLink>
+        </div>
+      </a>
     </motion.div>
   );
 }

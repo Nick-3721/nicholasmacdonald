@@ -1,25 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { useTheme } from '../styles/ThemeProvider';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import WelcomeMessage from '@/Components/WelcomeMessage';
+import styles from './Cursor.module.css';
 
 
 const cursorSize = {
   h: 16,
   w: 16,
 };
-
-const StyledCursor = styled(motion.div)`
-  height: ${cursorSize.h}px;
-  width: ${cursorSize.w}px;
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9;
-`;
 
 export default function Cursor() {
   const { theme } = useTheme();
@@ -86,15 +75,15 @@ export default function Cursor() {
   const variants = {
     default: {
       scale: 1,
-      backgroundColor: theme.secondaryColor,
+      backgroundColor: `rgb(var(--secondary-color))`,
     },
     hovered: {
       scale: 5,
-      backgroundColor: theme.tertiaryColor,
+      backgroundColor: `rgb(var(--tertiary-color))`,
     },
     title: {
       scale: 15,
-      backgroundColor: theme.secondaryColor,
+      backgroundColor: `rgb(var(--secondary-color))`,
       mixBlendMode: 'difference',
     },
   };
@@ -102,7 +91,8 @@ export default function Cursor() {
   const [showMessage, setShowMessage] = useState(true);
 
   return (
-    <StyledCursor
+    <motion.div
+      className={styles.cursor}
       style={{ x: cursorX, y: cursorY }}
       variants={variants}
       animate={cursorVariant}
@@ -112,6 +102,6 @@ export default function Cursor() {
           height={cursorSize.h}
         />
       }
-    </StyledCursor>
+    </motion.div>
   );
 }

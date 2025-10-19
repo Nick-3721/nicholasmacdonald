@@ -1,0 +1,6 @@
+/* Navigation component styles - specific styles can be added as needed */
+
+.copyright {
+  color: rgb(var(--secondary-color));
+  font-family: 'degular', sans-serif;
+}

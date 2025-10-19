@@ -1,35 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@/styles/ThemeProvider';
+import styles from './RevealLink.module.css';
 
 
 const DURATION = 0.35;
 const STAGGER = 0.05;
-
-
-const FlipLinkBase = styled.span`
-  font-family: "degular", sans-serif;
-  font-weight: 400;
-  position: relative;
-  cursor: pointer;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: clamp(0.7rem, 0.3rem + 1.2vw, 1rem);
-  color: ${({ theme }) => theme.secondaryColor};
-  height: fit-content;
-`;
-
-
-const FlipLinkInner = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-`;
 
 export default function RevealLink ({ children, href, newTab, to, }) {
   const isRouterLink = !!to;
@@ -41,9 +17,15 @@ export default function RevealLink ({ children, href, newTab, to, }) {
         rel: newTab ? "noopener noreferrer" : undefined,
       };
 
+  const Component = isRouterLink ? Link : 'a';
+
   return (
     <motion.div initial="initial" whileHover="hovered">
-      <FlipLinkBase data-cursor="hover" as={isRouterLink ? Link : 'a'} {...props}>
+      <Component 
+        className={styles.flipLinkBase} 
+        data-cursor="hover" 
+        {...props}
+      >
         <div>
           {children.split("").map((letter, i) => {
             return (
@@ -63,7 +45,7 @@ export default function RevealLink ({ children, href, newTab, to, }) {
           })}
         </div>
 
-        <FlipLinkInner>
+        <div className={styles.flipLinkInner}>
           {children.split("").map((letter, i) => {
             return (
               <motion.span 
@@ -80,8 +62,8 @@ export default function RevealLink ({ children, href, newTab, to, }) {
               key={i}>{letter}</motion.span>
             )
           })}
-        </FlipLinkInner>
-      </FlipLinkBase>
+        </div>
+      </Component>
     </motion.div>
 
     // <motion.a 

@@ -1,0 +1,20 @@
+.flipLinkBase {
+  font-family: "degular", sans-serif;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: clamp(0.7rem, 0.3rem + 1.2vw, 1rem);
+  color: rgb(var(--secondary-color));
+  height: fit-content;
+}
+
+.flipLinkInner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

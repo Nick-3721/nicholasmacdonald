@@ -2,12 +2,11 @@ import React from 'react'
 import RevealLink from '@/Components/RevealLink'
 import ThemeToggle from '@/Components/ThemeToggle'
 import Logo from '@/Components/Logo'
-import { useTheme } from '@/styles/ThemeProvider'
+import styles from './Nav.module.css'
 
 
 
-export default function Nav() {
-const { theme } = useTheme(); 
+export default function Nav() { 
 
   return (
     // <header>
@@ -48,8 +47,7 @@ const { theme } = useTheme();
           </div>
           <p
             data-cursor="hover"
-            style={{color: theme.secondaryColor, fontFamily: 'degular, sans-serif'}}
-            className="right"
+            className={`${styles.copyright} right`}
           > © {new Date().getFullYear()}</p>
         </div>
       </header>

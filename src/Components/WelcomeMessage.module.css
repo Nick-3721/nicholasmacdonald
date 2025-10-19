@@ -1,0 +1,22 @@
+@keyframes rotateMessage {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.message {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation: rotateMessage 10s linear infinite;
+}
+
+.character {
+  position: absolute;
+  transform-origin: bottom;
+  color: rgb(var(--secondary-color));
+}

@@ -1,0 +1,8 @@
+.logoContainer {
+  justify-self: start;
+}
+
+.styledLogo {
+  fill: rgb(var(--secondary-color));
+  height: 50px;
+}

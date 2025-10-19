@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { useTheme } from '@/styles/ThemeProvider';
 import { motion, AnimatePresence, distance } from 'framer-motion';
 
-
-
 export default function ImagePlacer({ children }) {
   const { theme } = useTheme();
   

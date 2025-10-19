@@ -1,7 +1,6 @@
 import React, { useState, useEffect, memo } from 'react';
 import { motion } from 'framer-motion';
-
-const randomChars = Array.from("!@£$%^&*()_+[];',./{}:\"<>?\\|1234567890-=¡€#¢∞§¶•ªº–≠");
+import { randomChars } from '@/utils/Constants/randomChars';
 
 const ScrambledLetter = memo(({ targetChar, phase, delay, as: Tag = 'span' }) => {
   const [displayChar, setDisplayChar] = useState('');

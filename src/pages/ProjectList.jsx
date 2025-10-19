@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ScramblingText from "../Components/ScramblingText";
-import styled from "styled-components";
-import { useTheme } from "../styles/ThemeProvider";
+
+import styles from "./ProjectList.module.css";
 
 const projects = [
   {
@@ -97,31 +97,7 @@ const categories = [
   "3D",
 ];
 
-const Page = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.primaryColor};
-`;
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 33fr 66fr;
-  gap: 20px;
-  padding: 80px;
-  color: ${({ theme }) => theme.secondaryColor};
-`;
-
-const Column1 = styled.div`
-  grid-column: 1 / 2;
-  ul {
-    padding: 0;
-    list-style-type: none;
-  }
-`;
-
-const Column2 = styled.div`
-  grid-column: 2 / 2;
-`;
 
 
 
@@ -141,14 +117,12 @@ export default function ProjectList() {
     const project = projects.find((p) => p.id === projectId);
     setProjectDisplayed(project);
   };
-  const { theme } = useTheme();
-
   console.log(filter);
 
   return (
-    <Page>
-      <Grid>
-        <Column1>
+    <div className={styles.page}>
+      <div className={styles.grid}>
+        <div className={styles.column1}>
           <ul>
             {projects.map((project) => (
               <li
@@ -195,8 +169,8 @@ export default function ProjectList() {
           </div>
 
 
-        </Column1>
-        <Column2>
+        </div>
+        <div className={styles.column2}>
           {projectDisplayed && (
             <div>
               {/* <h1>{projectDisplayed.title}</h1> */}
@@ -205,8 +179,8 @@ export default function ProjectList() {
             </div>
           )}
           
-        </Column2>
-      </Grid>
-    </Page>
+        </div>
+      </div>
+    </div>
   );
 }

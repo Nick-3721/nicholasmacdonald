@@ -1,0 +1,26 @@
+.flipLink {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: clamp(0.7rem, 0.4rem + 1.8vw, 1.2rem);
+  color: rgb(var(--secondary-color));
+}
+
+.flipContainer {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.flipText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: left;
+  white-space: nowrap;
+  opacity: 0;
+  margin: 0;
+  font-size: 80px;
+}

@@ -1,0 +1,162 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Sora:wght@100..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Sora:wght@100..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* CSS Variables Theme System */
+:root {
+  /* Default Theme (theme1) */
+  --primary-color: 0, 0, 0;
+  --secondary-color: 255, 255, 255;
+  --tertiary-color: 150, 150, 150;
+  
+  /* Transition Variables */
+  --transition-color: color 800ms ease-in-out;
+  --transition-background-color: background-color 800ms ease-in-out;
+  --transition-border-color: border-color 800ms ease-in-out;
+  --transition-fill: fill 800ms ease-in-out;
+  --transition-stroke: stroke 800ms ease-in-out;
+}
+
+/* Theme Classes */
+.theme1 {
+  --primary-color: 0, 0, 0;
+  --secondary-color: 255, 255, 255;
+  --tertiary-color: 150, 150, 150;
+}
+
+.theme2 {
+  --primary-color: 255, 206, 97;
+  --secondary-color: 249, 128, 75;
+  --tertiary-color: 255, 178, 106;
+}
+
+.theme3 {
+  --primary-color: 187, 175, 157;
+  --secondary-color: 51, 71, 86;
+  --tertiary-color: 130, 123, 98;
+}
+
+.theme4 {
+  --primary-color: 0, 255, 0;
+  --secondary-color: 19, 19, 19;
+  --tertiary-color: 167, 255, 124;
+}
+
+.theme5 {
+  --primary-color: 29, 0, 71;
+  --secondary-color: 255, 0, 0;
+  --tertiary-color: 120, 0, 255;
+}
+
+.theme6 {
+  --primary-color: 30, 63, 30;
+  --secondary-color: 255, 148, 141;
+  --tertiary-color: 85, 131, 85;
+}
+
+.theme7 {
+  --primary-color: 255, 97, 0;
+  --secondary-color: 0, 0, 0;
+  --tertiary-color: 255, 140, 0;
+}
+
+.theme8 {
+  --primary-color: 66, 80, 62;
+  --secondary-color: 255, 212, 175;
+  --tertiary-color: 184, 184, 184;
+}
+
+.theme9 {
+  --primary-color: 35, 9, 89;
+  --secondary-color: 255, 123, 123;
+  --tertiary-color: 122, 31, 104;
+}
+
+.theme10 {
+  --primary-color: 0, 0, 255;
+  --secondary-color: 255, 255, 255;
+  --tertiary-color: 173, 216, 230;
+}
+
+.theme11 {
+  --primary-color: 100, 120, 100;
+  --secondary-color: 251, 238, 241;
+  --tertiary-color: 168, 144, 128;
+}
+
+.theme12 {
+  --primary-color: 55, 63, 45;
+  --secondary-color: 255, 88, 62;
+  --tertiary-color: 92, 94, 85;
+}
+
+.theme13 {
+  --primary-color: 60, 66, 54;
+  --secondary-color: 183, 255, 0;
+  --tertiary-color: 102, 114, 88;
+}
+
+/* Global Styles */
+/* Theme color transitions - apply to all elements using theme colors */
+* {
+  transition: 
+    var(--transition-color),
+    var(--transition-background-color),
+    var(--transition-border-color),
+    var(--transition-fill),
+    var(--transition-stroke);
+}
+
+/* Override for elements that need faster transitions */
+/* button, 
+input, 
+[data-fast-transition] {
+  transition: 
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    fill 150ms ease-out,
+    stroke 150ms ease-out,
+    transform 150ms ease-out,
+    opacity 150ms ease-out,
+    box-shadow 150ms ease-out;
+} */
+
+body {
+  font-family: "Sora", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: "Krona one", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  line-height: 1.1em;
+  letter-spacing: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: inherit;
+}
+
+h1 {
+  color: rgb(var(--secondary-color));
+  font-size: 80px;
+  letter-spacing: 0.03em;
+}
+
+::selection {
+  background-color: rgba(var(--secondary-color), 0.75);
+  color: rgb(var(--primary-color));
+}
+
+::-moz-selection {
+  background-color: rgba(var(--secondary-color), 0.75);
+  color: rgb(var(--primary-color));
+}

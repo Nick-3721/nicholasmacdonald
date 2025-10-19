@@ -1,0 +1,23 @@
+/* Wrapper and headline container styles can be added here when needed */
+
+.section {
+  padding: 2rem;
+}
+
+.fontSora {
+  color: rgb(var(--secondary-color));
+  font-family: "Sora", sans-serif;
+  font-weight: 400;
+}
+
+.fontKrona {
+  color: rgb(var(--secondary-color));
+  font-family: "Krona one", sans-serif;
+  font-weight: 400;
+}
+
+.fontDegular {
+  color: rgb(var(--secondary-color));
+  font-family: "degular", sans-serif;
+  font-weight: 200;
+}

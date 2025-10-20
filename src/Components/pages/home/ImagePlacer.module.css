@@ -1,0 +1,11 @@
+.image_placer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(var(--primary-color));
+  box-sizing: border-box;
+}

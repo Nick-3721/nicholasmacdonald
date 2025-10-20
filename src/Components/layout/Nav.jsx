@@ -1,7 +1,7 @@
 import React from 'react'
-import RevealLink from '@/Components/RevealLink'
-import ThemeToggle from '@/Components/ThemeToggle'
-import Logo from '@/Components/Logo'
+import RevealLink from '@/Components/ui/RevealLink'
+import ThemeToggle from '@/Components/ui/ThemeToggle'
+import Logo from '@/Components/ui/Logo'
 import styles from './Nav.module.css'
 
 

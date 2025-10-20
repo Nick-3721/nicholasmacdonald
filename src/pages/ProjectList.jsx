@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ScramblingText from "../Components/ScramblingText";
+import ScramblingText from "../Components/ui/ScramblingText";
 
 import styles from "./ProjectList.module.css";
 

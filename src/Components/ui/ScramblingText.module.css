@@ -1,0 +1,38 @@
+.container {
+  text-align: left;
+  display: block;
+  white-space: normal;
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.motion_wrapper {
+  display: inline;
+  width: 100%;
+  max-width: 100%;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.letter {
+  display: inline;
+  pointer-events: none;
+  transition:  var(--transition-color);
+}
+
+.letter_space {
+  display: inline;
+  white-space: pre-wrap;
+  pointer-events: none;
+}
+
+.letter_nowrap {
+  display: inline;
+  white-space: nowrap;
+  pointer-events: none;
+}

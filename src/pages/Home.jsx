@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import WordFlip from '@/Components/WordFlip'
-import ImagePlacer from '@/Components/ImagePlacer';
-import ScramblingText from '@/Components/ScramblingText';
+import WordFlip from '@/Components/ui/WordFlip'
+import ImagePlacer from '@/Components/pages/home/ImagePlacer';
+import ScramblingText from '@/Components/ui/ScramblingText';
 import styles from './Home.module.css';
 
 export default function Home() {
@@ -15,6 +15,8 @@ export default function Home() {
 
             <ScramblingText as="h1" text="Nicholas MacDonald" trigger="inView" />
             <ScramblingText as="h1" text="Developer & " trigger="inView" />
+            {/* <span style={{ display: "block" }}> */}
+
             <ScramblingText 
               as="h1"
               words={["Designer", "Videographer", "Animator", "3D Artist", "Creative", "Visual Artist", "Illustrator", "Motion Designer", "Photographer", "UI/UX Designer",]}
@@ -22,15 +24,11 @@ export default function Home() {
               trigger="timer"
               cycle={true}
               startDelay={500}
-            />
+              />
+            {/* </span> */}
           </div>
         </div>
       </ImagePlacer>
-        {/* <section>
-          <p style={{color: `rgb(var(--secondary-color))`, fontFamily:"Sora, sans-serif", fontWeight: 400}}>Sora - Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptas magni quasi saepe non consequatur veritatis nemo soluta cumque obcaecati eaque omnis, neque atque unde officiis laboriosam fuga at repudiandae.</p>
-          <p style={{color: `rgb(var(--secondary-color))`, fontFamily:"Krona one, sans-serif", fontWeight: 400}}>Krona one - Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptas magni quasi saepe non consequatur veritatis nemo soluta cumque obcaecati eaque omnis, neque atque unde officiis laboriosam fuga at repudiandae.</p>
-          <p style={{color: `rgb(var(--secondary-color))`, fontFamily:"degular, sans-serif", fontWeight: 200}}>degular - Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptas magni quasi saepe non consequatur veritatis nemo soluta cumque obcaecati eaque omnis, neque atque unde officiis laboriosam fuga at repudiandae.</p>
-        </section> */}
     </>
   )
 }

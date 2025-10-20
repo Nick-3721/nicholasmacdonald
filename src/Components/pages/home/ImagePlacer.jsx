@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styles from './ImagePlacer.module.css'
 import { motion, AnimatePresence, distance } from 'framer-motion';
 
 export default function ImagePlacer({ children }) {
@@ -6,7 +7,7 @@ export default function ImagePlacer({ children }) {
   const [placedImages, setPlacedImages] = useState([]);
   const [imageIndex, setImageIndex] = useState(0)
 
-  const imageArray = import.meta.glob('../assets/images/homepage/*{.jpg,gif}', {
+  const imageArray = import.meta.glob('../../../assets/images/homepage/*{.jpg,gif}', {
     eager: true,
   });
   
@@ -81,15 +82,7 @@ export default function ImagePlacer({ children }) {
     <div
       onClick={handleClick}
       // onMouseMove={handleMouseMove}
-      style={{
-        position: 'relative',
-        width: "100",
-        height: "100vh",
-        minHeight: "800px",
-        display: "flex",
-        alignItems: "center",
-        overflow: 'hidden',
-        backgroundColor: `rgb(var(--primary-color))`}}
+      className={styles.image_placer}
     >
       <AnimatePresence>
       {placedImages.map((img) => (

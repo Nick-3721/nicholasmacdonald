@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useTheme } from '../styles/ThemeProvider';
+import { useTheme } from '../../styles/ThemeProvider';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import WelcomeMessage from '@/Components/WelcomeMessage';
+import WelcomeMessage from '@/Components/layout/WelcomeMessage';
 import styles from './Cursor.module.css';
 
 

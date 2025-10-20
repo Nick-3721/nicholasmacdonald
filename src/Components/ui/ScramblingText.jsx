@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState, memo } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { randomChars } from '@/utils/Constants/randomChars';
+import styles from './ScramblingText.module.css';
 
 const ScrambledLetter = memo(({ targetChar, phase, delay, as: Tag = 'span', index }) => {
   const [displayChar, setDisplayChar] = useState(targetChar); // Initialize with targetChar
@@ -70,11 +71,7 @@ const ScrambledLetter = memo(({ targetChar, phase, delay, as: Tag = 'span', inde
     <MotionTag
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.3 }} // Opacity transition duration
-      style={{
-        display: 'inline-block',
-        whiteSpace: 'pre',
-        pointerEvents: 'none',
-      }}
+      className={targetChar === ' ' ? styles.letter_space : styles.letter_nowrap}
     >
       {displayChar}
     </MotionTag>
@@ -131,37 +128,49 @@ const ScrambledText = ({
 
   return (
     <div
-      className={className}
-      data-cursor="title"
-      style={{
-        textAlign: 'left',
-        display: 'block',
-        whiteSpace: 'pre',
-        width: 'fit-content',
-      }}
+      className={`${styles.container} ${className}`}
     >
       <MotionTag
         ref={ref}
         initial="hidden"
         animate={shouldAnimate ? 'visible' : 'hidden'}
-        style={{ display: 'inline-block', whiteSpace: 'pre' }}
+        className={styles.motion_wrapper}
       >
-        {currentText.split('').map((char, index) => {
-          // Reverse stagger for "out" phase, forward for "in"
-          const delay = cycle && phase === 'out'
-            ? (currentText.length - 1 - index) * staggerDelay
-            : index * staggerDelay;
-          return (
-            <ScrambledLetter
-              key={`${currentText}-${char}-${index}`}
-              targetChar={char}
-              phase={shouldAnimate ? phase : 'in'}
-              delay={delay}
-              as={Tag}
-              index={index}
-            />
-          );
-        })}
+        {currentText.split(' ').map((word, wordIndex) => (
+          <span 
+            key={`word-${wordIndex}`} 
+            data-cursor="title"
+            className={styles.word}
+          >
+            {word.split('').map((char, charIndex) => {
+              const globalIndex = currentText.split(' ').slice(0, wordIndex).join(' ').length + 
+                                (wordIndex > 0 ? 1 : 0) + charIndex;
+              const delay = cycle && phase === 'out'
+                ? (currentText.length - 1 - globalIndex) * staggerDelay
+                : globalIndex * staggerDelay;
+              return (
+                <ScrambledLetter
+                  key={`${currentText}-${char}-${globalIndex}`}
+                  targetChar={char}
+                  phase={shouldAnimate ? phase : 'in'}
+                  delay={delay}
+                  as={Tag}
+                  index={globalIndex}
+                />
+              );
+            })}
+            {wordIndex < currentText.split(' ').length - 1 && (
+              <ScrambledLetter
+                key={`space-${wordIndex}`}
+                targetChar=" "
+                phase={shouldAnimate ? phase : 'in'}
+                delay={0}
+                as={Tag}
+                index={-1}
+              />
+            )}
+          </span>
+        ))}
       </MotionTag>
     </div>
   );

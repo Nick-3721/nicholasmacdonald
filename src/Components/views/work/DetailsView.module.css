@@ -1,0 +1,133 @@
+.column_name {
+  grid-row: 1;
+  grid-column: span 4 / span 4;
+  align-self: end;
+}
+
+.column_project_list {
+  grid-row: 2;
+  grid-column: span 2 / span 2;           
+  /* text-align: right; */
+  display: flex;
+  flex-direction: column;
+}
+
+.categories {
+  margin-top: auto;
+  /* margin-bottom: 1.75rem; */
+}
+
+.column_project_display {
+  grid-row: 2;
+  /* grid-column: span 6 / span 6; */
+  grid-column: span 4 / span 4;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.project_description {
+  margin-bottom: 2.5rem;
+  flex-shrink: 0;
+}
+
+.cover_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 1rem;
+  flex-grow: 1;
+}
+
+.filterButton {
+  background: none;
+  border: none;
+  color: rgb(var(--secondary-color));
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.filterButton:hover {
+  opacity: 0.7;
+}
+
+.filterButton.active {
+  color: rgb(var(--tertiary-color));
+}
+
+.projectItem {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(var(--secondary-color), 0.2);
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: rgb(var(--secondary-color));
+}
+
+.projectDescription {
+  color: rgb(var(--tertiary-color));
+  margin-bottom: 0.5rem;
+}
+
+.projectCategories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.categoryTag {
+  background-color: rgba(var(--secondary-color), 0.1);
+  color: rgb(var(--secondary-color));
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+/* Project list item styles */
+.project_item {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+.project_item_filtered {
+  opacity: 0.5;
+}
+
+/* Category filter styles */
+.category_filter {
+  display: inline-flex;
+  line-height: 1.5em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  transition: var(--transition-color);
+}
+
+.category_filter_filtered {
+  opacity: 0.6;
+}
+
+.category_filter_active {
+  text-decoration: underline;
+}
+
+.category_separator {
+  display: inline-flex;
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+}

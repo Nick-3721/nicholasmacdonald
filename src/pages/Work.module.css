@@ -1,0 +1,30 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(var(--primary-color));
+}
+
+.grid {
+  display: grid;
+  /* grid-template-columns: repeat(8, minmax(0, 1fr)); */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: minmax(7.5rem, 1fr) 4fr;
+  gap: calc(var(--spacing-clamp) * 3);
+  padding: calc(var(--spacing-clamp)*5) var(--spacing-clamp) calc(var(--spacing-clamp)*3) var(--spacing-clamp);
+  /* padding: 24px 24px 24px 24px; */
+  height: 100vh;
+  box-sizing: border-box;
+  color: rgb(var(--secondary-color));
+}
+
+.column_display_modes {
+  grid-row: 1;
+  grid-column: span 2 / span 2;
+  align-self: end;
+}
+
+.filter_separator {
+  display: inline-flex;
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+}

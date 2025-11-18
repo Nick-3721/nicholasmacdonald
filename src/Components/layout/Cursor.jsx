@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useTheme } from '../../styles/ThemeProvider';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import WelcomeMessage from '@/Components/layout/WelcomeMessage';
 import styles from './Cursor.module.css';
+import { useLocation } from 'react-router-dom';
 
 
 const cursorSize = {
@@ -11,7 +11,7 @@ const cursorSize = {
 };
 
 export default function Cursor() {
-  const { theme } = useTheme();
+  const location = useLocation();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [cursorVariant, setCursorVariant] = useState('default');
@@ -97,11 +97,12 @@ export default function Cursor() {
       variants={variants}
       animate={cursorVariant}
     >
-      {showMessage && 
+      {/* {showMessage &&  */}
+      {/* {location.pathname === '/' && 
         <WelcomeMessage
           height={cursorSize.h}
         />
-      }
+      } */}
     </motion.div>
   );
 }

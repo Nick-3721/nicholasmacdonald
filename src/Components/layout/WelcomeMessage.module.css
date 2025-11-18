@@ -20,3 +20,28 @@
   transform-origin: bottom;
   color: rgb(var(--secondary-color));
 }
+
+.pill {
+  margin-left: 20px;
+  position: relative;
+  bottom: 8px;
+  align-items: center;
+  display: flex;
+  background-color: rgb(var(--secondary-color));
+  padding: 6px 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: rgb(var(--secondary-color));
+  font-size: 1rem;
+  user-select: none;
+  width: fit-content;
+  height: 16px;
+}
+
+.pill_text {
+  margin: 0;
+  font-size: 14px;
+  color: rgb(var(--primary-color));
+  display: inline-flex;
+  white-space: nowrap;
+}

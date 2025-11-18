@@ -1,4 +1,71 @@
-/* Navigation component styles - specific styles can be added as needed */
+/* Navigation component styles */
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Shared positioning base */
+.top,
+.middle, 
+.bottom,
+.themeToggle {
+  position: fixed;
+}
+
+.top {
+  top: var(--spacing-clamp);
+  left: var(--spacing-clamp);
+  right: var(--spacing-clamp);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+}
+
+.middle {
+  top: 50%;
+  right: var(--spacing-clamp);
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: var(--spacing-clamp);
+  left: var(--spacing-clamp);
+  right: var(--spacing-clamp);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.themeToggle {
+  top: var(--spacing-clamp);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.top .links {
+  margin-left: auto;
+}
+
+.bottom .links {
+  margin-right: auto;
+}
+
+.right {
+  margin: 0 0 0 auto;
+}
 
 .copyright {
   color: rgb(var(--secondary-color));

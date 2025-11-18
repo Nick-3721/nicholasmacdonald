@@ -26,28 +26,28 @@ export default function Nav() {
     //     <p style={{color: "white"}} className="right">{new Date().getFullYear()}©</p>
     //   </div>
     // </header>
-      <header>
-        <div className="nav-top">
+      <header className={styles.header}>
+        <div className={styles.top}>
           <Logo />
-          <div className="nav-links">
+          <div className={styles.links}>
             <RevealLink href="https://github.com/Nick-3721" newTab>Github</RevealLink>
             <RevealLink href="https://www.linkedin.com/in/nicholasmacdonalddesign/" newTab>LinkedIn</RevealLink>
           </div>
-          <div className="theme-toggle-container">
+          <div className={styles.themeToggle}>
             <ThemeToggle />
           </div>
         </div>
-        <div className="nav-middle">
+        <div className={styles.middle}>
           <RevealLink to="/work">Work</RevealLink>
         </div>
-        <div className="nav-bottom">
-          <div className="nav-links">
+        <div className={styles.bottom}>
+          <div className={styles.links}>
             <RevealLink to="/about" newTab>About</RevealLink>
             <RevealLink href="mailto:hello@nicholasmacdonald.com" newTab>Contact</RevealLink>
           </div>
           <p
             data-cursor="hover"
-            className={`${styles.copyright} right`}
+            className={`${styles.copyright} ${styles.right}`}
           > © {new Date().getFullYear()}</p>
         </div>
       </header>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import styles from './ImagePlacer.module.css'
 import { motion, AnimatePresence, distance } from 'framer-motion';
+import { use } from 'react';
 
-export default function ImagePlacer({ children }) {
-  
+export default function ImagePlacer({ children, mode, setMode }) {
+
+
   const [placedImages, setPlacedImages] = useState([]);
   const [imageIndex, setImageIndex] = useState(0)
 
@@ -80,8 +82,7 @@ export default function ImagePlacer({ children }) {
 
   return (
     <div
-      onClick={handleClick}
-      // onMouseMove={handleMouseMove}
+      {...(mode === 'draw' ? { onMouseMove: handleMouseMove } : { onClick: handleClick })}
       className={styles.image_placer}
     >
       <AnimatePresence>

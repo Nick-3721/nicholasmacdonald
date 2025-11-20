@@ -19,7 +19,7 @@ export default function DetailsView({ projects,categories, filter, setFilter }) 
   };
   
   return (
-    <>
+    <div className={styles.grid}>
       <div className={styles.column_name}>
           <ScramblingText
             as="h1"
@@ -106,6 +106,6 @@ export default function DetailsView({ projects,categories, filter, setFilter }) 
             className={styles.cover_image}
           />
         </div>
-    </>
+    </div>
   )
 }

@@ -1,6 +1,18 @@
+.grid {
+  display: grid;
+  /* grid-template-columns: repeat(8, minmax(0, 1fr)); */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: minmax(7.5rem, 1fr) 4fr;
+  gap: calc(var(--spacing-clamp) * 3);
+  padding: calc(var(--spacing-clamp)*5) var(--spacing-clamp) calc(var(--spacing-clamp)*3) var(--spacing-clamp);
+  height: 100vh;
+  box-sizing: border-box;
+  color: rgb(var(--secondary-color));
+}
+
 .column_name {
   grid-row: 1;
-  grid-column: span 4 / span 4;
+  grid-column: 3 / span 4;
   align-self: end;
 }
 

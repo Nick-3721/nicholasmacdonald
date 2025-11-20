@@ -2,25 +2,21 @@
   width: 100vw;
   height: 100vh;
   background-color: rgb(var(--primary-color));
+  position: relative;
+  overflow: hidden;
+  /* padding: calc(var(--spacing-clamp)*5) var(--spacing-clamp) calc(var(--spacing-clamp)*3) var(--spacing-clamp); */
 }
 
-.grid {
-  display: grid;
-  /* grid-template-columns: repeat(8, minmax(0, 1fr)); */
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-template-rows: minmax(7.5rem, 1fr) 4fr;
-  gap: calc(var(--spacing-clamp) * 3);
-  padding: calc(var(--spacing-clamp)*5) var(--spacing-clamp) calc(var(--spacing-clamp)*3) var(--spacing-clamp);
-  /* padding: 24px 24px 24px 24px; */
-  height: 100vh;
-  box-sizing: border-box;
-  color: rgb(var(--secondary-color));
-}
+.toggle_container {
+  position: absolute;
+  top: calc(var(--spacing-clamp) * 7);
+  left: var(--spacing-clamp);
+  z-index: 10;
 
-.column_display_modes {
-  grid-row: 1;
-  grid-column: span 2 / span 2;
-  align-self: end;
+  button {
+    color: rgb(var(--secondary-color));
+    cursor: pointer;
+  }
 }
 
 .filter_separator {

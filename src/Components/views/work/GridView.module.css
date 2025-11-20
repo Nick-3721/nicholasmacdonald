@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: calc(var(--spacing-clamp) * 9) calc(var(--spacing-clamp) * 3);
+  padding: calc(var(--spacing-clamp) * 11) 
+           var(--spacing-clamp);
+           /* calc(var(--spacing-clamp) * 9)
+           var(--spacing-clamp); */
+  height: 100vh;
+  box-sizing: border-box;
+  color: rgb(var(--secondary-color));
+  overflow-y: scroll;
+}
+
+.grid_item {
+  grid-column: span 2 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grid_image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.grid_title {
+  padding-top: 0.75rem;
+}
